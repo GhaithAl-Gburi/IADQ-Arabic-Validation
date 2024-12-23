@@ -90,8 +90,8 @@ anova(endo_mod2_fit, endo_mod4_fit)
 #Calculating the correlation between each item and the two factors
 
 #Store items of each factors
-Preop <- select(IADQ, IADQ$ajd10, IADQ$ajd11, IADQ$ajd12)
-FTA <- select(IADQ, IADQ$ajd13, IADQ$ajd14, IADQ$ajd15)
+Preop <- select(IADQ, 23, 24, 25)
+FTA <- select(IADQ, 26, 27, 28)
 
 #Conducting reliability analysis for each factor and printing item statistics including the corrected-item total correlation
 Preop_rel <- alpha(cor(Preop, method = "spearman"))
@@ -106,7 +106,7 @@ print(corr.test(IADQ$ajd12, IADQ$fta, method = "spearman"), digits = 3)
 
 #Printing the correlation between the failure to adapt items (Items: 13-15) and the preoccupation subscale
 print(corr.test(IADQ$ajd13, IADQ$preoc, method = "spearman"), digits = 3)
-print(corr.test(IADQ$ajd14, IADQ$ppreoc, method = "spearman"), digits = 3)
+print(corr.test(IADQ$ajd14, IADQ$preoc, method = "spearman"), digits = 3)
 print(corr.test(IADQ$ajd15, IADQ$preoc, method = "spearman"), digits = 3)
 
 
@@ -121,7 +121,7 @@ comp_rel2 <- compRelSEM(cont_mod2_fit)
 print(comp_rel2, digits = 3)
 
 
-#Intrinsic concurrent validity: Stressor scale ---> preoccupation, failure to adapt
+#A) Intrinsic concurrent validity: Stressor scale ---> preoccupation, failure to adapt
 se_preoc <- lmrob(preoc ~ se, data = IADQ)
 summary(se_preoc)
 se_fta <- lmrob(fta ~ se, data = IADQ)
@@ -129,7 +129,9 @@ summary(se_fta)
 se_multi <- manova(cbind(preoc, fta) ~ se, data = IADQ)
 Anova(se_multi, type = "III", robust = TRUE)
 
-#Extrinsic concurrent validity: Preoccupation ---> PHQ-9, GAD-7
+#Extrensic concurrent validity:
+
+#B) Preoccupation ---> PHQ-9, GAD-7
 preoc_phq9 <- lmrob(phq9 ~ preoc, data = IADQ)
 summary(preoc_phq9)
 preoc_gad7 <- lmrob(gad7 ~ preoc, data = IADQ)
@@ -137,7 +139,7 @@ summary(preoc_gad7)
 preoc_multi <- manova(cbind(phq9, gad7) ~ preoc, data = IADQ)
 Anova(preoc_multi, type = "III", robust = TRUE)
 
-#Extrinsic concurrent validity: Failure to adapt ---> PHQ-9, GAD-7
+#C) Failure to adapt ---> PHQ-9, GAD-7
 fta_phq9 <- lmrob(phq9 ~ fta, data = IADQ)
 summary(fta_phq9)
 fta_gad7 <- lmrob(gad7 ~ fta, data = IADQ)
@@ -145,7 +147,7 @@ summary(fta_gad7)
 fta_multi <- manova(cbind(phq9, gad7) ~ fta, data = IADQ)
 Anova(fta_multi, type = "III", robust = TRUE)
 
-#Extrinsic concurrent validity: Preoccupation, Failure to adapt ---> PHQ-9, GAD-7
+#D) Preoccupation, Failure to adapt ---> PHQ-9, GAD-7
 iadq_phq9 <- lmrob(phq9 ~ preoc + fta, data = IADQ)
 summary(iadq_phq9)
 iadq_gad7 <- lmrob(gad7 ~ preoc + fta, data = IADQ)
@@ -153,7 +155,7 @@ summary(iadq_gad7)
 iadq_multi <- manova(cbind(phq9, gad7) ~ preoc + fta, data = IADQ)
 Anova(iadq_multi, type = "III", robust = TRUE)
 
-#Extrinsic concurrent validity: Preoccupation + Failure to adapt ---> PHQ-9, GAD-7
+#E) Preoccupation + Failure to adapt ---> PHQ-9, GAD-7
 total_phq9 <- lmrob(phq9 ~ total, data = IADQ)
 summary(total_phq9)
 total_gad7 <- lmrob(gad7 ~ total, data = IADQ)
