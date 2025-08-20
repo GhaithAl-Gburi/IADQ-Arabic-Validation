@@ -6,14 +6,14 @@
 
 
 ## Purpose
-This repository contains `analysis_code.R` — an R script used to perform confirmatory factor analysis (CFA) and psychometric validation for the IADQ instrument. The script runs multiple CFA models for both continuous scores and endorsement (ordinal) rates, computes composite reliability, corrected item‑total correlations (Spearman), and tests concurrent validity (robust linear models and MANOVA).
+This repository contains `Analysis_code.R` — an R script used to perform confirmatory factor analysis (CFA) and psychometric validation for the IADQ instrument. The script runs multiple CFA models for both continuous scores and endorsement (ordinal) rates, computes composite reliability, corrected item‑total correlations (Spearman), and tests concurrent validity (robust linear models and MANOVA).
 
 > **Data privacy:** this repository does **not** include participant‑level identifiable data. 
 
 ---
 
 ## Files in this repo
-- `analysis_code.R` — the main analysis script.  
+- `Analysis_code.R` — the main analysis script.  
 - `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.  
 - `README.md` — this file.  
 
@@ -48,13 +48,13 @@ Other variables used in the script for validity checks or regressions (examples)
 From R (repository root):
 
 ```r
-source("analysis_code.R")
+source("Analysis_code.R")
 ```
 
 From the command line:
 
 ```bash
-Rscript analysis_code.R
+Rscript Analysis_code.R
 ```
 
 ---
