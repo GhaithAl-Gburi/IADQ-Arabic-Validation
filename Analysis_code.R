@@ -11,7 +11,7 @@ library(dplyr)
 library(psych)
 
 #load the data file
-IADQ <- read.csv("IADQ dataset.csv")
+IADQ <- read.csv("IADQ_dataset.csv")
 
 #Confirmatory factor analyses of continuous data:
 
