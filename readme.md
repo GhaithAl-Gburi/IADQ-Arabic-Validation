@@ -4,6 +4,9 @@
 
 **Study DOI / citation:** Al‑Gburi M, Waleed MA, Shevlin M, Al‑Gburi G. *Translation and Validation of the Arabic International Adjustment Disorder Questionnaire Among Patients with Physical Illness and Their Families in Iraq.* Chronic Stress (Thousand Oaks). 2025 Apr 16;9:24705470251332801. DOI: `10.1177/24705470251332801`.
 
+## Quick view
+Click to view the full analysis results and visualizations:
+[Open the full analysis report (HTML)](https://rawcdn.githack.com/GhaithAl-Gburi/IADQ-Arabic-Validation/main/result.html)
 
 ## Purpose
 This repository contains `Analysis_code.R` — an R script used to perform confirmatory factor analysis (CFA) and psychometric validation for the IADQ instrument. The script runs multiple CFA models for both continuous scores and endorsement (ordinal) rates, computes composite reliability, corrected item‑total correlations (Spearman), and tests concurrent validity (robust linear models and MANOVA).
@@ -13,9 +16,12 @@ This repository contains `Analysis_code.R` — an R script used to perform confi
 ---
 
 ## Files in this repo
-- `Analysis_code.R` — the main analysis script.  
+- `Analysis_code.R` — Main R script that performs the analyses.  
+- `Analysis_code.Rmd` — R Markdown source (script + narrative + plots).  
+- `result.html` — Rendered HTML report of the complete analysis workflow.  
 - `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.  
-- `README.md` — this file.  
+- `README.md` — this file.
+- `LICENSE` — MIT License (reuse and citation conditions).
 
 ---
 
