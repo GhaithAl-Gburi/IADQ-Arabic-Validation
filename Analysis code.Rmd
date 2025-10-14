@@ -83,20 +83,20 @@ summary(endo_mod4_fit, standardized = TRUE, fit.measures = TRUE)
 #Perform the chi-square DiffTest to assess the relative fitness:
 
 #Relative fitness between the 2-factor solutions and the 1-factor solution
-anova(endo_mod1_fit, endo_mod2_fit)
-anova(endo_mod1_fit, endo_mod3_fit)
-anova(endo_mod1_fit, endo_mod4_fit)
+lavTestLRT(endo_mod1_fit, endo_mod2_fit)
+lavTestLRT(endo_mod1_fit, endo_mod3_fit)
+lavTestLRT(endo_mod1_fit, endo_mod4_fit)
 
 #Relative fitness between the overlapped 2-factor solutions and the original 2-factor solution
-anova(endo_mod2_fit, endo_mod4_fit)
+lavTestLRT(endo_mod2_fit, endo_mod4_fit)
 ```
 
 ```{r}
 #Calculating the correlation between each item and the two factors
 
 #Store items of each factors
-Preop <- select(IADQ, 23, 24, 25)
-FTA <- select(IADQ, 26, 27, 28)
+Preop <- select(IADQ, "ajd10", "ajd11", "ajd12")
+FTA <- select(IADQ, "ajd13", "ajd14", "ajd15")
 
 #Conducting reliability analysis for each factor and printing item statistics including the corrected-item total correlation
 Preop_rel <- alpha(cor(Preop, method = "spearman"))
@@ -134,7 +134,7 @@ summary(se_preoc)
 se_fta <- lmrob(fta ~ se, data = IADQ)
 summary(se_fta)
 se_multi <- manova(cbind(preoc, fta) ~ se, data = IADQ)
-Anova(se_multi, type = "III", robust = TRUE)
+Anova(se_multi, type = "III")
 ```
 
 ```{r}
@@ -146,7 +146,7 @@ summary(preoc_phq9)
 preoc_gad7 <- lmrob(gad7 ~ preoc, data = IADQ)
 summary(preoc_gad7)
 preoc_multi <- manova(cbind(phq9, gad7) ~ preoc, data = IADQ)
-Anova(preoc_multi, type = "III", robust = TRUE)
+Anova(preoc_multi, type = "III")
 
 #C) Failure to adapt ---> PHQ-9, GAD-7
 fta_phq9 <- lmrob(phq9 ~ fta, data = IADQ)
@@ -154,7 +154,7 @@ summary(fta_phq9)
 fta_gad7 <- lmrob(gad7 ~ fta, data = IADQ)
 summary(fta_gad7)
 fta_multi <- manova(cbind(phq9, gad7) ~ fta, data = IADQ)
-Anova(fta_multi, type = "III", robust = TRUE)
+Anova(fta_multi, type = "III")
 
 #D) Preoccupation, Failure to adapt ---> PHQ-9, GAD-7
 iadq_phq9 <- lmrob(phq9 ~ preoc + fta, data = IADQ)
@@ -162,7 +162,7 @@ summary(iadq_phq9)
 iadq_gad7 <- lmrob(gad7 ~ preoc + fta, data = IADQ)
 summary(iadq_gad7)
 iadq_multi <- manova(cbind(phq9, gad7) ~ preoc + fta, data = IADQ)
-Anova(iadq_multi, type = "III", robust = TRUE)
+Anova(iadq_multi, type = "III")
 
 #E) Preoccupation + Failure to adapt ---> PHQ-9, GAD-7
 total_phq9 <- lmrob(phq9 ~ total, data = IADQ)
@@ -170,6 +170,7 @@ summary(total_phq9)
 total_gad7 <- lmrob(gad7 ~ total, data = IADQ)
 summary(total_gad7)
 total_multi <- manova(cbind(phq9, gad7) ~ total, data = IADQ)
-Anova(total_multi, type = "III", robust = TRUE)
+Anova(total_multi, type = "III")
 ```
+
 
