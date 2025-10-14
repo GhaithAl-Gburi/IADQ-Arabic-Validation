@@ -19,7 +19,8 @@ This repository contains `Analysis_code.R` — an R script used to perform confi
 - `Analysis_code.R` — Main R script that performs the analyses.  
 - `Analysis_code.Rmd` — R Markdown source (script + narrative + plots).  
 - `results.html` — Rendered HTML report of the complete analysis workflow.  
-- `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.  
+- `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.
+- `survey.docx` — the doc file containing the arabic and english version of the research survey
 - `README.md` — this file.
 - `LICENSE` — MIT License (reuse and citation conditions).
 
