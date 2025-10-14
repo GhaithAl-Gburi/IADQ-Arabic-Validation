@@ -6,7 +6,7 @@
 
 ## Quick view
 Click to view the full analysis results and visualizations:
-[Open the full analysis report (HTML)](https://rawcdn.githack.com/GhaithAl-Gburi/IADQ-Arabic-Validation/main/result.html)
+[Open the full analysis report (HTML)](https://rawcdn.githack.com/GhaithAl-Gburi/IADQ-Arabic-Validation/main/results.html)
 
 ## Purpose
 This repository contains `Analysis_code.R` — an R script used to perform confirmatory factor analysis (CFA) and psychometric validation for the IADQ instrument. The script runs multiple CFA models for both continuous scores and endorsement (ordinal) rates, computes composite reliability, corrected item‑total correlations (Spearman), and tests concurrent validity (robust linear models and MANOVA).
@@ -18,7 +18,7 @@ This repository contains `Analysis_code.R` — an R script used to perform confi
 ## Files in this repo
 - `Analysis_code.R` — Main R script that performs the analyses.  
 - `Analysis_code.Rmd` — R Markdown source (script + narrative + plots).  
-- `result.html` — Rendered HTML report of the complete analysis workflow.  
+- `results.html` — Rendered HTML report of the complete analysis workflow.  
 - `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.  
 - `README.md` — this file.
 - `LICENSE` — MIT License (reuse and citation conditions).
