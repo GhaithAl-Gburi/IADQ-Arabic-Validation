@@ -1,4 +1,4 @@
-# README — IADQ Confirmatory Factor Analysis & Psychometrics (R)
+# README — IADQ Psychometric Analysis (R)
 
 **Repository author:** Ghaith Al‑Gburi
 
@@ -16,11 +16,10 @@ This repository contains `Analysis_code.R` — an R script used to perform confi
 ---
 
 ## Files in this repo
-- `Analysis_code.R` — Main R script that performs the analyses.  
 - `Analysis_code.Rmd` — R Markdown source (script + narrative + plots).  
-- `results.html` — Rendered HTML report of the complete analysis workflow.  
+- `results.html` — Rendered PDF report for the complete analysis workflow.  
 - `IADQ_dataset.csv` — the CSV file containing the data related to the study referenced above.
-- `survey.docx` — the doc file containing the arabic and english version of the research survey
+- `survey.docx` — the doc file containing the arabic and english version of the research survey.
 - `README.md` — this file.
 - `LICENSE` — MIT License (reuse and citation conditions).
 
@@ -44,7 +43,7 @@ The script expects a CSV with these columns (continuous items and endorsement it
 - Continuous items: `ajd10`, `ajd11`, `ajd12`, `ajd13`, `ajd14`, `ajd15`  
 - Endorsement (ordinal) items: `ajd10e`, `ajd11e`, `ajd12e`, `ajd13e`, `ajd14e`, `ajd15e`
 
-Other variables used in the script for validity checks or regressions (examples):
+Other variables used in the script for validity checks or regressions:
 - `preoc`, `fta`, `total` — the derived IADQ subscale/total scores.  
 - `se` — the IADQ stressor scale (used as a predictor for intrinsic concurrent validity).  
 - `phq9`, `gad7` — external measures used for concurrent validity (PHQ‑9 and GAD‑7).  
