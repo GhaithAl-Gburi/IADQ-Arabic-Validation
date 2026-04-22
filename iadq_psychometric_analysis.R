@@ -23,7 +23,7 @@ for (package in packages) {
 ## Import and inspect data attributes
 
 # load the data file
-IADQ <- read.csv("IADQ dataset.csv")
+IADQ <- read.csv("IADQ_dataset.csv")
 
 attributes(IADQ)[names(attributes(IADQ)) != "row.names"]
 
